@@ -8,6 +8,13 @@ body {
   font-family: sans-serif;
   overflow-y: hidden;
 }
+*{
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: -moz-none;
+  -o-user-select: none;
+  user-select: none;
+}
 #app {
   width: 300px;
   height: 100%;
@@ -90,11 +97,11 @@ body {
 .plus img {
   width: 30px;
 }
-.station-name {
-  width: 70%;
+.station-name:hover{
+  cursor: pointer;
 }
 .channel {
-  width: 30%;
+  flex: auto;
   font-weight: 700;
 }
 .right {
