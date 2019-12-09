@@ -1,22 +1,126 @@
-.App {
+html,
+body,
+#root {
+  height: 100%;
+}
+body {
+  background-color: #010313de;
+  font-family: sans-serif;
+  overflow-y: hidden;
+}
+#app {
+  width: 300px;
+  height: 100%;
+  display: flex;
+  background-color: #2f2f3a;
+  border-radius: 20px;
+  overflow: hidden;
+  position: relative;
+  margin: auto;
+  box-shadow: 0 2px 0px #212129;
+}
+.header {
+  display: flex;
+  background-color: #eeaf61;
+  height: 72px;
+  width: 100%;
+  position: absolute;
+  align-items: center;
+}
+.header div {
+  flex: auto;
+}
+.arrow-left img {
+  width: 13px;
+  text-align: left;
+  margin-left: 15px;
+}
+.switch img {
+  width: 20px;
+  margin-right: 15px;
+}
+.title {
+  font-size: 22px;
+  letter-spacing: -0.6px;
+  color: #fff;
+  padding: 20px;
+  font-weight: 600;
   text-align: center;
 }
-
-.App-logo {
-  height: 40vmin;
+.radio-list {
+  width: 100%;
+  margin-top: 82px;
+  color: #9fa8b9;
+  font-size: 21px;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.station {
   display: flex;
   flex-direction: column;
+  margin: 15px;
+  border-bottom: 1px solid #3e3e48;
+  padding-bottom: 10px;
+}
+.station-items:last-child {
+  border-bottom: none;
+}
+.station-control {
+  display: flex;
+  width: 100%;
+  margin-bottom: 16px;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+}
+.row {
+  display: flex;
+  flex-flow: wrap;
+}
+.radio-logo {
+  text-align: center;
+}
+.radio-logo img {
+  width: 130px;
+  border: 2px solid #9fa8b9;
+  border-radius: 50%;
+}
+.minus,
+.plus,
+.radio-logo {
+  flex: auto;
+}
+.minus img,
+.plus img {
+  width: 30px;
+}
+.station-name {
+  width: 70%;
+}
+.channel {
+  width: 30%;
+  font-weight: 700;
+}
+.right {
+  text-align: right;
 }
 
-.App-link {
-  color: #09d3ac;
+.footer {
+  display: flex;
+  background-color: #22222b;
+  border-top: 1px solid #4d505c;
+  height: 72px;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+}
+.footer-box {
+  padding-top: 0px;
+  width: 50%;
+  margin: auto;
+  text-align: center;
+}
+.playing {
+  color: #eeaf61;
+  font-size: 11px;
+}
+.selected-station {
+  color: #9fa8b9;
+  font-size: 22px;
 }

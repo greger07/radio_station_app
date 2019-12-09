@@ -1,26 +1,74 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import React from "react";
+import { RadioStationTable } from "./RadioStationTable";
+import { Header } from "./Header";
+import { Footer } from "./Footer";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      selectedStation: -1,
+      selectedStationName: null
+    };
+  }
+
+  getStations() {
+    const stations = [
+      {
+        id: 1,
+        name: "Putin FM",
+        channel: 66.6
+      },
+      {
+        id: 2,
+        name: "Dribbble FM",
+        channel: 101.2
+      },
+      {
+        id: 3,
+        name: "Doge FM",
+        channel: 99.4
+      },
+      {
+        id: 4,
+        name: "Ballads FM",
+        channel: 87.1
+      },
+      {
+        id: 5,
+        name: "Maximum FM",
+        channel: 142.2
+      }
+    ];
+    return stations;
+  }
+
+  openStation(station) {
+    this.setState({
+      selectedStation:
+        this.state.selectedStation === station.id ? -1 : station.id,
+      selectedStationName: station.name
+    });
+  }
+
+  render() {
+    const stations = this.getStations();
+    return (
+      <div id="app">
+        <Header />
+        <RadioStationTable
+          stations={stations}
+          selectedStation={this.state.selectedStation}
+          toggleCallback={s => this.openStation(s)}
+        />
+        <Footer
+          selectedStation={this.state.selectedStation}
+          selectedStationName={this.state.selectedStationName}
+        />
+      </div>
+    );
+  }
 }
 
 export default App;
