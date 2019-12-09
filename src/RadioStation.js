@@ -7,16 +7,16 @@ export class RadioStation extends Component {
     let s = this.props.station;
     let selectedStation = this.props.selectedStation;
     return (
-      <div class="station">
-        <div class="row">
+      <div className="station">
+        <div className="row">
           {selectedStation === s.id && <StationMenu />}
           <div
-            class="station-name"
+            className="station-name"
             onClick={() => this.props.toggleCallback(s)}
           >
             {s.name}
           </div>
-          <div class="channel right">{numberFormat.format(s.channel)}</div>
+          <div className="channel right">{numberFormat.format(s.channel)}</div>
         </div>
       </div>
     );
