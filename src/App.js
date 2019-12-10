@@ -45,15 +45,17 @@ class App extends React.Component {
   }
 
   openStation(station) {
-    this.setState({
+    this.setState((prevState, _) => ({
       selectedStation:
-        this.state.selectedStation === station.id ? -1 : station.id,
-      selectedStationName: station.name
-    });
+        prevState.selectedStation === station.id ? -1 : station.id,
+      selectedStationName:
+        prevState.selectedStationName === station.name ? null : station.name
+    }));
   }
 
   render() {
     const stations = this.getStations();
+    console.log(this.state.selectedStationName);
     return (
       <div id="app">
         <Header />
